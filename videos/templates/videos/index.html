@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+
+
+
+<div class="d-flex flex-wrap">
+    {% block content %}
+    <h1 class ="mb-5">YELIJOCH</h1>
+
+    {% for item in videos %}
+
+       <div class="px-3 mb-5">{% video item.url '426x240' %}
+        <div class="d-flex jusrify-content-start">
+            {{ item.title }}
+
+        </div></div>
+    {% endfor %}
+
+
+</div>
+{% endblock %}
