@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b3unc9qpn%pv8(eax#@9u)l886se&0-(w=lef)*a6k8-x)6m6k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['thethird.pythonanywhere.com']
+ALLOWED_HOSTS = ['thethird.pythonanywhere.com','localhost']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'embed_video',
-    'videos'
+    'videos',
+    'members_db'
 
 ]
 
@@ -121,6 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'videos\static'),
+    os.path.join(BASE_DIR, 'members_db\static')
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
